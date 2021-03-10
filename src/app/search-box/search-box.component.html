@@ -1,0 +1,17 @@
+<div class="search-box">
+  <div class="field-container">
+    <input type="search" placeholder="search by keyword" [(ngModel)]="searchKeyword"/>
+    <button (click)="onSearch()">Search</button>
+    <div *ngIf="prevSearchHistory.length > 0">
+      Previous Searches:
+      <span class="tags" *ngFor="let search of prevSearchHistory">{{search.keyword}}</span>
+    </div>
+  </div>
+
+  <ul>
+    <li *ngFor="let evt of listOfEvent">
+      <h3>{{evt.name}}</h3>
+      <p>{{evt.info}}</p>
+    </li>
+  </ul>
+</div>
